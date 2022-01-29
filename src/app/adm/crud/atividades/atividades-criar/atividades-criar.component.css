@@ -1,0 +1,47 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1{
+    text-align: center;
+}
+
+
+button {
+    margin: 15px;
+}
+
+.conteudo{
+    margin: auto;
+}
+
+.mat-form-field{
+    margin-top:10px
+}
+textarea.mat-input-element {
+    height:150px;
+    margin-bottom:15px}
+
+    * {
+        font-family: Lato;
+      }
+      
+      ngx-dropzone,
+      .custom-dropzone {
+        margin: 20px;
+      }
+      
+      .custom-dropzone {
+          height: 250px;
+          background: lightgray;
+          color: black;
+          border: 2px solid black;
+          border-radius: 5px;
+          font-size: 20px;
+      }
+      
+      .custom-dropzone.ngx-dz-hovered {
+        border: 5px solid rgb(235, 79, 79);
+      }

@@ -1,0 +1,94 @@
+<section  fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" class="conteudo"> 
+
+  
+    <ul class="breadcrumb">
+          <li><a href="/home">Início</a></li>
+          <li><a href="/adm">Administração</a></li>
+          <li><a href="/adm-atividades">Atividades</a></li>
+          <li><a href="/adm-criar-atividade">Criar Atividade</a></li>
+        </ul>
+        
+  
+        <h1>Nova Atividade</h1>
+          <form>
+              <mat-form-field >
+                <input matInput placeholder="Título da atividade"
+                [(ngModel)] ="atividade.titulo" name="titulo" > 
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                  <mat-label>Matéria</mat-label>            
+                  <mat-select [(value)]="materiaSelecionada">
+                    <mat-option> </mat-option>
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria.nome">
+                      {{categoria.nome}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>Série</mat-label>            
+                  <mat-select [(value)]="serieSelecionada">
+                    <mat-option> </mat-option>
+                    <mat-option *ngFor="let serie of series" [value]="serie.nome">
+                      {{serie.nome}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+  
+              <mat-form-field>
+                <textarea matInput placeholder="Descrição da atividade"
+                  [(ngModel)] ="atividade.descricao" name="descricao" ></textarea>
+              </mat-form-field>
+
+              <app-dropzone></app-dropzone>
+              <!--  
+<input type="file" (change)="onChange($event)"
+[(ngModel)] ="atividade.imagem" name="imagem" >
+
+<div *ngIf="imagem">
+    <img [src]="imagem" width="200px" height="200px" alt="">
+</div>
+<div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+  <ngx-dropzone-label>
+    <div>
+        <h2>My custom dropzone</h2>
+      </div>
+    </ngx-dropzone-label>
+    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+    </ngx-dropzone-image-preview>
+
+              <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" [multiple]="false" (change)="onSelect($event)" [(ngModel)] ="atividade.imagem" name="imagem">
+                <ngx-dropzone-label>
+                  <div>
+                    <h2>Arraste a imagem ou clique para buscar.</h2>
+                  </div>
+                </ngx-dropzone-label>
+                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                  <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                </ngx-dropzone-image-preview>
+              </div>
+            -->
+              <!--
+              <div class="upload">        
+                <input type="file" placeholder="Imagem da atividade"
+              [(ngModel)] ="atividade.imagem" name="imagem" >
+            </div>
+          -->
+              <mat-form-field>
+              <input matInput placeholder="Data de publicação da atividade"
+                  [(ngModel)] ="atividade.data" name="data" disabled>
+              </mat-form-field>
+              
+            </form>
+            
+                <button mat-raised-button (click) = "criarAtividade()" color = "primary">
+                  Salvar
+        </button>
+        
+        <button mat-raised-button (click) = "cancelar()" color = "accent">
+          Cancelar
+        </button>
+  
+  
+  </section>
